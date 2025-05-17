@@ -8,12 +8,6 @@ pipeline {
             }
         }
 
-        stage('Install') {
-            steps {
-                sh 'npm install'
-            }
-        }
-
         stage('Run') {
             steps {
                 sh 'node app.js'
