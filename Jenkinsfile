@@ -1,29 +1,20 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18' // Official Node.js Docker image
-            args '-p 3000:3000' // Optional: expose ports
-        }
-    }
-
-    environment {
-        NODE_ENV = 'development'
-    }
+    agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Clone') {
             steps {
                 git 'https://github.com/shahmeerfast/SCD-Online-Task'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Install') {
             steps {
                 sh 'npm install'
             }
         }
 
-        stage('Run App') {
+        stage('Run') {
             steps {
                 sh 'node app.js'
             }
