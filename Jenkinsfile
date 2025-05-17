@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/shahmeerfast/SCD-Online-Task'
+                git branch: 'main', url: 'https://github.com/shahmeerfast/SCD-Online-Task'
             }
         }
 
